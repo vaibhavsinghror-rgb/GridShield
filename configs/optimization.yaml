@@ -1,0 +1,27 @@
+# Optimization and Controller Configuration
+mpc:
+  horizon_steps: 96             # 24 hours (15-min timesteps)
+  replan_interval_steps: 1      # Rolling horizon update step
+  solver: "scipy_linprog"       # SciPy HiGHS simplex/interior-point linear solver
+  risk_mode: "cvar"             # "nominal", "cvar", "worst_case"
+  cvar_alpha: 0.90              # Tail risk confidence
+  cvar_weight: 0.25             # Weight of CVaR in objective
+  max_scenarios: 8
+
+weights:
+  lambda_carbon: 0.05           # $/kgCO2 ($50/ton)
+  lambda_degradation: 0.015      # $/kWh throughput
+  lambda_comfort: 2.0           # $/degC-h violation
+  lambda_terminal_soc: 0.10     # Encourages maintaining SoC balance at end of horizon
+
+modes:
+  cost_only:
+    lambda_carbon: 0.0
+    lambda_degradation: 0.015
+    lambda_comfort: 2.0
+  carbon_aware:
+    lambda_carbon: 0.08         # higher carbon penalty ($80/ton)
+    lambda_degradation: 0.015
+    lambda_comfort: 2.0
+  constrained_emissions:
+    emissions_budget_kg_per_day: 120.0

@@ -1,0 +1,22 @@
+# Baseline Benchmark Experiment
+experiment_name: "baseline_comparison"
+seeds: [42, 101, 2024]
+scenarios:
+  - "typical_weekday"
+  - "weekend"
+  - "hot_summer_day"
+  - "solar_surplus"
+  - "high_carbon_evening"
+controllers:
+  - "rule_based"
+  - "myopic"
+  - "oracle"
+  - "ucc_mpc"
+metrics:
+  - "total_cost_usd"
+  - "total_emissions_kg"
+  - "comfort_violation_deg_hours"
+  - "peak_grid_kw"
+  - "battery_throughput_kwh"
+  - "solve_time_seconds"
+output_dir: "experiments/results/baseline"

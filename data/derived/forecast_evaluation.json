@@ -1,0 +1,22 @@
+{
+  "persistence": {
+    "mae": 6.9553,
+    "rmse": 9.8997,
+    "nrmse": 0.6598
+  },
+  "seasonal_naive": {
+    "mae": 6.7083,
+    "rmse": 9.5876,
+    "nrmse": 0.639
+  },
+  "ridge_regression": {
+    "mae": 2.3873,
+    "rmse": 2.9273,
+    "nrmse": 0.1951
+  },
+  "temporal_transformer": {
+    "mae": 4.2874,
+    "rmse": 5.3435,
+    "nrmse": 0.3562
+  }
+}

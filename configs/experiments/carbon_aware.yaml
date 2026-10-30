@@ -1,0 +1,7 @@
+# Carbon-Aware Trade-off Experiment
+experiment_name: "carbon_tradeoff"
+seeds: [42, 99]
+carbon_weights: [0.0, 0.02, 0.05, 0.10, 0.20] # $/kgCO2 ($0 to $200/tonne)
+controller: "ucc_mpc"
+scenario: "typical_weekday"
+output_dir: "experiments/results/carbon_aware"

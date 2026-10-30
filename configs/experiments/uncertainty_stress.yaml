@@ -1,0 +1,10 @@
+# Uncertainty Stress Testing Experiment
+experiment_name: "uncertainty_stress"
+seeds: [42, 123]
+noise_levels: [0.0, 0.10, 0.25, 0.40] # relative standard deviation of forecast error
+bias_levels: [-0.20, 0.0, 0.20]       # forecast bias ratio
+scenario: "hot_summer_day"
+controllers:
+  - "ucc_mpc_nominal"
+  - "ucc_mpc_robust_cvar"
+output_dir: "experiments/results/uncertainty_stress"

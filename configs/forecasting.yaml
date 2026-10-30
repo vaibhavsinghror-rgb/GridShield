@@ -1,0 +1,25 @@
+# Forecasting Configuration
+model:
+  type: "temporal_transformer"
+  input_dim: 7             # load, outdoor_temp, indoor_temp, occupancy, solar, tariff, carbon
+  d_model: 64
+  nhead: 4
+  num_encoder_layers: 2
+  dim_feedforward: 128
+  dropout: 0.1
+  horizon_steps: 96        # 24 hours at 15-min intervals
+  history_steps: 96        # 24 hours lookback
+
+training:
+  batch_size: 32
+  learning_rate: 0.001
+  num_epochs: 15
+  weight_decay: 1e-4
+  patience: 4
+  train_val_split: 0.8
+  device: "cpu"
+
+uncertainty:
+  method: "residual_bootstrap"  # or quantile regression
+  num_scenarios: 10
+  confidence_levels: [0.10, 0.50, 0.90]

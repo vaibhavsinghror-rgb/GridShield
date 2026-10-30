@@ -1,0 +1,9 @@
+ablation_type,parameter_value,electricity_cost_usd,operational_emissions_kg,battery_throughput_kwh
+carbon_weight,lambda_C=0.0,10.82,20.76,128.13
+carbon_weight,lambda_C=0.02,10.81,20.19,128.99
+carbon_weight,lambda_C=0.05,10.82,19.35,130.17
+carbon_weight,lambda_C=0.1,10.85,18.82,131.54
+carbon_weight,lambda_C=0.2,10.94,18.16,132.22
+risk_mode,mode=nominal,21.26,40.68,127.11
+risk_mode,mode=cvar,21.27,40.68,127.11
+risk_mode,mode=worst_case,21.31,40.69,127.11
